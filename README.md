@@ -4,6 +4,9 @@
 
 Package for all services for thermal printer in android, ios, macos, windows.
 
+# IMPORTANT!
+## |Bluetooth connection is removed from this project|
+
 ## Getting Started
 
 This plugin is used to print data on thermal printer.
@@ -12,7 +15,6 @@ This plugin is used to print data on thermal printer.
 
 | Service                        | Android | iOS | macOS | Windows |
 | ------------------------------ | :-----: | :-: | :---: |:-----:  |
-| Bluetooth                      | ✅      | ✅  | ✅    | ✅     |
 | USB                            | ✅      |     | ✅    | ✅     |
 
 ```dart
