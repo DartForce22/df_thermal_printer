@@ -1,14 +1,12 @@
 import 'dart:io';
 import 'dart:typed_data';
 
-import 'package:flutter_blue_plus/flutter_blue_plus.dart';
 import 'package:flutter_thermal_printer/Windows/window_printer_manager.dart';
 import 'package:flutter_thermal_printer/utils/printer.dart';
 
 import 'Others/other_printers_manager.dart';
 
 export 'package:esc_pos_utils_plus/esc_pos_utils_plus.dart';
-export 'package:flutter_blue_plus/flutter_blue_plus.dart' show BluetoothDevice;
 
 class FlutterThermalPrinter {
   FlutterThermalPrinter._();
@@ -16,7 +14,6 @@ class FlutterThermalPrinter {
   static FlutterThermalPrinter? _instance;
 
   static FlutterThermalPrinter get instance {
-    FlutterBluePlus.setLogLevel(LogLevel.debug);
     _instance ??= FlutterThermalPrinter._();
     return _instance!;
   }
