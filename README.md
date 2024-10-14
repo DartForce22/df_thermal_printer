@@ -129,9 +129,3 @@ Download Driver from Here:
 
 https://pos-x.com/download/thermal-receipt-printer-driver-2/
 
-
-
-
-## Contributers
-
-![Contributors Display](https://badges.pufler.dev/contributors/Sunil9162/flutter_thermal_printer?size=50&padding=5&perRow=10&bots=true)
