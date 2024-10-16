@@ -7,6 +7,7 @@ import android.annotation.TargetApi;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.hardware.usb.UsbConfiguration;
 import android.hardware.usb.UsbConstants;
 import android.hardware.usb.UsbDevice;
 import android.hardware.usb.UsbDeviceConnection;
@@ -14,6 +15,8 @@ import android.hardware.usb.UsbEndpoint;
 import android.hardware.usb.UsbManager;
 import android.os.Build;
 
+import java.io.UnsupportedEncodingException;
+import java.nio.charset.StandardCharsets;
 import java.security.Permission;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -159,6 +162,13 @@ public class UsbPrinter implements EventChannel.StreamHandler{
         for (int i = 0; i < bytes.size(); i++) {
             data[i] = bytes.get(i).byteValue();
         }
+        try {
+            String value = new String(data, "UTF-8");
+            data = value.getBytes(StandardCharsets.UTF_8);
+        } catch (UnsupportedEncodingException e) {
+            throw new RuntimeException(e);
+        }
+
         connection.bulkTransfer(mBulkEndOut, data, data.length, 5000);
         connection.releaseInterface(device.getInterface(0));
         connection.close();
